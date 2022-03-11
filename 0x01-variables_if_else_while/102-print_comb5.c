@@ -25,7 +25,7 @@ putchar(i + '0');
 putchar(j + '0');
 putchar(' ');
 putchar(k + '0');
-if (k == i)
+if (k == i && l <= j)
 {
 l = j + 1;
 }
