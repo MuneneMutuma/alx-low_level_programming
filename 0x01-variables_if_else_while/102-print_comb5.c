@@ -25,8 +25,16 @@ putchar(i + '0');
 putchar(j + '0');
 putchar(' ');
 putchar(k + '0');
+if (k > i)
+{
 putchar(l + '0');
-if (i != 9 || j != 8)
+}
+if (k == i && l <= j)
+{
+l = j + 1;
+putchar(l + '0');
+}
+else if (i != 9 || j != 8)
 {
 putchar(',');
 putchar(' ');
