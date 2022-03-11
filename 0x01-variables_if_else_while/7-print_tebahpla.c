@@ -16,7 +16,7 @@ int length, i;
 alphabet = "\nabcdefghijklmnopqrstuvwxyz";
 length = strlen(alphabet);
 
-for (i = length; i >= 0; i--)
+for (i = length - 1; i >= 0; i--)
 putchar(alphabet[i]);
 
 return (0);
