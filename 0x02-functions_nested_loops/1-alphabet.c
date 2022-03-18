@@ -9,7 +9,7 @@
 
 void print_alphabet(void)
 {
-	char alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
+	char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 	int i;
 
 	for (i = 0; i < 27; i++)
