@@ -19,7 +19,7 @@ void _puts(char *str)
 		strlen++;
 		i++;
 	}
-	
+
 	i = 0;
 	while (i < strlen)
 	{
