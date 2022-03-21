@@ -16,7 +16,7 @@ void rev_string(char *s)
 	strlen = _strlen(s);
 	i = 0;
 
-	while (i < strlen/2)
+	while (i < strlen / 2)
 	{
 		tmp = s[i];
 		s[i] = s[strlen - 1 - i];
@@ -36,7 +36,7 @@ void rev_string(char *s)
 int _strlen(char *c)
 {
 	int i;
-	
+
 	i = 0;
 	while (c[i] != '\0')
 	{
