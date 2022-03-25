@@ -13,13 +13,13 @@ char *cap_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (sep = 0; sep < 13; sep++)
+		for (sep = 0; separator[sep] != '\0'; sep++)
 		{
-			if (str[i] == separator[sep] && str[i + i] <= 122 && str[i + 1] >= 97)
-				str[i + 1] = (str[i + 1] - 32) + '\0';
+			if (str[i] == separator[sep] && str[i + i] <= 'z' && str[i + 1] >= 'a')
+				str[i + 1] -= 32;
 		}
 	}
-	if (str[0] <= 122 && str[0] >= 97)
-		str[0] = (str[0] -32) +'0';
+	if (str[0] <= 'z' && str[0] >= 'a')
+		str[0] -= 32;
 	return (str);
 }
