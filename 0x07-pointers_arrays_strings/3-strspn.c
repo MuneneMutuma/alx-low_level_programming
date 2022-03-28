@@ -19,9 +19,9 @@ unsigned int _strspn(char *s, char *accept)
 		}
 
 		if (!accept[j])
-			return (i);
+			return (i + 1);
 
 	}
 
-	return (i);
+	return (i + 1);
 }
