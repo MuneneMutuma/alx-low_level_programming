@@ -22,5 +22,8 @@ char *create_array(unsigned int size, char c)
 		arr[size] = c;
 	}
 
-	return (arr);
+	if (arr)
+		return (arr);
+
+	return (0);
 }
