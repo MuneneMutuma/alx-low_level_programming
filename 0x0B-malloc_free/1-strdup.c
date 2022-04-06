@@ -14,7 +14,7 @@ int _strlen(char *str);
 char *_strdup(char *str)
 {
 	int i;
-	char *dup = malloc(sizeof(char) * _strlen(str));
+	char *dup = malloc(sizeof(char) * (_strlen(str) + 1));
 
 	if (!str)
 		return (0);
@@ -42,6 +42,9 @@ char *_strdup(char *str)
 int _strlen(char *str)
 {
 	int len;
+
+	if (!str)
+		return (0);
 
 	len = 0;
 	while (str[len] != '\0')
