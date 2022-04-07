@@ -56,7 +56,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 }
 
 /**
- * _stlen - finds length of a string
+ * _strlen - finds length of a string
  *
  * @str: pointer to string
  *
@@ -65,6 +65,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 int _strlen(char *str)
 {
 	int i = 0;
+
+	if (!str)
+		return (0);
 
 	while (str[i] != '\0')
 		i++;
