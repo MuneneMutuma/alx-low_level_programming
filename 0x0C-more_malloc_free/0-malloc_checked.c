@@ -11,11 +11,9 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *num;
+	int *num = malloc(b);
 
-	num = (void *)malloc(sizeof(b));
-
-	if (!num)
+	if (num == 0)
 		exit(98);
 	return (num);
 }
