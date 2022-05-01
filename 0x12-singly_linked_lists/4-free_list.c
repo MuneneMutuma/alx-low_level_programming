@@ -13,9 +13,8 @@ void free_list(list_t *head)
 	list_t *current_node;
 
 	if (!head)
-		exit(0);
+		return;
 	current_node = head;
-
 	while (current_node->next)
 	{
 		head = current_node->next;
@@ -23,7 +22,9 @@ void free_list(list_t *head)
 		free(current_node);
 		current_node = head;
 	}
-	free(current_node->str);
-	free(current_node->next);
-	free(current_node);
+	if (current_node)
+	{	free(current_node->str);
+		free(current_node->next);
+		free(current_node);
+	}
 }
