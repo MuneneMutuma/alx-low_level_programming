@@ -16,7 +16,6 @@ size_t print_list(const list_t *h)
 	size_t count;
 	list_t *next_node;
 
-	next_node = malloc(sizeof(list_t));
 	count = 0;
 	next_node = (list_t *)h;
 	while (next_node)
