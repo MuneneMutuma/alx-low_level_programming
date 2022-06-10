@@ -2,7 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+/**
+ * add_dnodeint_end - adds a node to end of a linked list
+ *
+ * @head: head of the linked list
+ * @n: value of the node
+ *
+ * Return: address of the new node
+ */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *iter, *new;
