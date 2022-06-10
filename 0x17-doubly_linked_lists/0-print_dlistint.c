@@ -16,7 +16,7 @@ size_t print_dlistint(const dlistint_t *head)
 	dlistint_t *iter;
 
 	if (!head)
-		return (-1);
+		return (0);
 	iter = (dlistint_t *)head;
 	n = 0;
 	while (iter->next)
