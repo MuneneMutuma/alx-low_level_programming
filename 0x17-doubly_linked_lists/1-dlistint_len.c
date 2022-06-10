@@ -1,6 +1,13 @@
 #include "lists.h"
 #include <stddef.h>
 
+/**
+ * dlistint_len - finds the length of a double linked list
+ *
+ * @h: head of the linked list
+ *
+ * Return: length of double linked list
+ */
 size_t dlistint_len(const dlistint_t *h)
 {
 	size_t length;
