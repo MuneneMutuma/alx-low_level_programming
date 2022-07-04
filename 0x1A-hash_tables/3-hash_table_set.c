@@ -17,6 +17,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node;
 	unsigned long int index;
 
+	if (ht == NULL)
+		return (0);
+
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
@@ -29,14 +32,45 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 		node->value = "";
 
+	node->next = NULL;
+
 	index = key_index((const unsigned char *)key, ht->size);
-	if ((ht->array + index))
+	iter(index, &ht, key, &node);
+	return (1);
+}
+
+/**
+ * iter - iterates through index position linked list of hash table
+ *
+ * @index: index of the list
+ * @ht: hash table
+ * @key: key value to be inserted
+ * @node: node to be inserted
+ *
+ * Return: void
+ */
+void iter(int index, hash_table_t **ht, const char *key, hash_node_t **node)
+{
+	hash_node_t *prev, *current;
+
+	prev = NULL;
+	if ((*ht)->array + index)
 	{
-		node->next = *(ht->array + index);
-		ht->array[index] = node;
+		current = *((*ht)->array + index);
+		while (current && strcmp(current->value, key) != 0)
+		{
+			prev = current;
+			current = current->next;
+		}
+		if (current != NULL)
+		{
+			prev->next = current->next;
+			free(current);
+		}
+
+		(*node)->next = *((*ht)->array + index);
+		(*ht)->array[index] = *node;
 	}
 	else
-		ht->array[index] = node;
-
-	return (1);
+		(*ht)->array[index] = *node;
 }
