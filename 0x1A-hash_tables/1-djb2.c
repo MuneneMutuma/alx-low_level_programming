@@ -1,5 +1,5 @@
 /**
- * hash_dbj2 - dbj2 hashing algorithm
+ * hash_djb2 - djb2 hashing algorithm
  *
  * @str: string to be hashed
  *
