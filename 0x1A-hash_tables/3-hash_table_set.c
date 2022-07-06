@@ -69,7 +69,15 @@ void iter(int index, hash_table_t **ht, hash_node_t **node)
 			free(current);
 		}
 
-		(*node)->next = *((*ht)->array + index);
+		if (prev != NULL)
+			(*node)->next = *((*ht)->array + index);
+		if (prev == NULL && current)
+		{
+			(*node)->next = current->next;
+			free(current->key);
+			free(current->value);
+			free(current);
+		}
 		(*ht)->array[index] = *node;
 	}
 	else
