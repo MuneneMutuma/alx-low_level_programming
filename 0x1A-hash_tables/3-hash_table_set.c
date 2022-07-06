@@ -35,7 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->next = NULL;
 
 	index = key_index((const unsigned char *)key, ht->size);
-	iter(index, &ht, key, &node);
+	iter(index, &ht, &node);
 	return (1);
 }
 
@@ -44,12 +44,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  *
  * @index: index of the list
  * @ht: hash table
- * @key: key value to be inserted
  * @node: node to be inserted
  *
  * Return: void
  */
-void iter(int index, hash_table_t **ht, const char *key, hash_node_t **node)
+void iter(int index, hash_table_t **ht, hash_node_t **node)
 {
 	hash_node_t *prev, *current;
 
@@ -57,14 +56,16 @@ void iter(int index, hash_table_t **ht, const char *key, hash_node_t **node)
 	if ((*ht)->array + index)
 	{
 		current = *((*ht)->array + index);
-		while (current && strcmp(current->value, key) != 0)
+		while (current && strcmp(current->key, (*node)->key) != 0)
 		{
 			prev = current;
 			current = current->next;
 		}
-		if (current != NULL)
+		if (current != NULL && prev != NULL)
 		{
 			prev->next = current->next;
+			free(current->key);
+			free(current->value);
 			free(current);
 		}
 
