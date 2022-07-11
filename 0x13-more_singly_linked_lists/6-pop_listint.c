@@ -21,8 +21,5 @@ int pop_listint(listint_t **head)
 	val = iter->n;
 	free(iter);
 
-	if (*head)
-		return (val);
-
-	return (0);
+	return (val);
 }
