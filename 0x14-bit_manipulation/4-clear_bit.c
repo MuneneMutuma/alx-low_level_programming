@@ -13,10 +13,10 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int val;
 
 	val = 1 << index;
-	if (*n && val)
+	if (*n & val)
 		*n = *n - val;
 
-	if ((*n && val) == 0)
+	if ((*n & val) == 0)
 		return (1);
 	return (-1);
 }
