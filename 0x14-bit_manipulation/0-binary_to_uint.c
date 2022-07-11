@@ -13,6 +13,8 @@ unsigned int binary_to_uint(const char *b)
 	int len, i, bit, bit_value;
 	unsigned int value;
 
+	if (!b)
+		return (0);
 	iter = (char *)b;
 	len = _strlen(iter);
 	value = 0;
