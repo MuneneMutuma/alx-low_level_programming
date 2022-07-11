@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	for (i = 0; n > bin; i++)
+	for (i = 0; n >= (bin - 1); i++)
 	{
 		bin *= 2;
 	}
