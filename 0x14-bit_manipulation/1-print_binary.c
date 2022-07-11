@@ -24,7 +24,7 @@ void print_binary(unsigned long int n)
 		bin *= 2;
 	}
 
-	for (; bin > 0; i--, bin /= 2)
+	for (; bin > 0; i--, bin >>= 1)
 	{
 		if (n >= bin)
 		{
