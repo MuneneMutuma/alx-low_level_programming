@@ -19,7 +19,7 @@ char **strtow(char *str)
 		return (NULL);
 
 	size = count_words(str);
-	array = malloc(sizeof(char *) * size);
+	array = malloc(sizeof(char *) * (size + 1));
 	if (array == NULL)
 		return (NULL);
 
@@ -44,14 +44,17 @@ int count_words(char *str)
 	flag = 0;
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (count > 0 && str[i] == 32 && flag == 1)
+		if (str[i] == 32 && flag == 1)
 		{
 			flag = 0;
 			count++;
 		}
-		else
+		else if (str[i] != 32)
 			flag = 1;
 	}
+
+	if (flag == 1)
+		count++;
 
 	return (count);
 }
@@ -88,6 +91,16 @@ char **setup_array(char **array, char *str)
 			len++;
 	}
 
+	if (str[i] != 32)
+	{
+		array[j] = malloc(sizeof(char) * (len + 1));
+		if (!array[j])
+		{
+			for (; j >= 0; j--)
+				free(array[j]);
+			return (NULL);
+		}
+	}
 	return (array);
 }
 
