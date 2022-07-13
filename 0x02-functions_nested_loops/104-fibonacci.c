@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - prints the first 98 fibonacci numbers
+ *
+ * Return: 0 always
+ */
 int main(void)
 {
 	unsigned long int a, b, tmp;
@@ -19,5 +24,5 @@ int main(void)
 
 	printf("\n");
 
-	return (1);
+	return (0);
 }

@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * main - finds sum of multiples of 3 and 5 less than 1024
+ *
+ * Return: 0 always
+ */
 int main(void)
 {
 	int i, sum;
@@ -11,5 +16,5 @@ int main(void)
 	}
 
 	printf("%d\n", sum);
-	return (1);
+	return (0);
 }

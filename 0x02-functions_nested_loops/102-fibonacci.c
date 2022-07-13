@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - prints the first 50 fibonacci numbers
+ *
+ * Return: 0 always
+ */
 int main(void)
 {
 	long int a, b, tmp;
@@ -14,10 +19,10 @@ int main(void)
 
 		printf("%ld", b);
 		if (i != 47)
-			printf(", ");	
+			printf(", ");
 	}
 
 	printf("\n");
 
-	return (1);
+	return (0);
 }

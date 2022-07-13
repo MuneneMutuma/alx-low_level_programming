@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - find the sum of all even fibonacci numbers <= 4000000
+ *
+ * Return: 0 always
+ */
 int main(void)
 {
 	long a, b, tmp, sum;
@@ -18,5 +23,5 @@ int main(void)
 	}
 	printf("%ld\n", sum);
 
-	return(1);
+	return (0);
 }
