@@ -11,7 +11,10 @@ int main(void)
 	long int a, b, tmp;
 	int i;
 
-	for (a = 1, b = 2, i = 0; i < 48; i++)
+	a = 1;
+	b = 2;
+	printf("%ld, %ld, ", a, b);
+	for (i = 0; i < 48; i++)
 	{
 		tmp = a;
 		a = b;
