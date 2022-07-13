@@ -19,6 +19,9 @@ char **strtow(char *str)
 		return (NULL);
 
 	size = count_words(str);
+	if (size == 0)
+		return (NULL);
+
 	array = malloc(sizeof(char *) * (size + 1));
 	if (array == NULL)
 		return (NULL);
