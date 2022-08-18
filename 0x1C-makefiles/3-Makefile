@@ -12,7 +12,7 @@ all: $(OBJ)
 fclean: clean oclean
 
 clean:
-	$(RM) *.swp *.~ $(NAME)
+	$(RM) ./*.swp ./*.~ $(NAME)
 oclean:
 	$(RM) $(OBJ)
 
