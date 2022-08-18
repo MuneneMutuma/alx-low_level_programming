@@ -4,10 +4,10 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 
 all: $(OBJ)
-	$(CC)  $^ -o school
+	$(CC)  $^ -o $(NAME)
 %.o: %.c
 	$(CC) -c -o $@ $<
 
 .PHONY: clean
 clean:
-	-rm *.o school
+	-rm *.o $(NAME)
