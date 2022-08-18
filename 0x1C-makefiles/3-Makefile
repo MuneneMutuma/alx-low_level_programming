@@ -9,12 +9,16 @@ all: $(OBJ)
 %.o: %.c
 	$(CC) -c -o $@ $<
 
+.PHONY: fclean
 fclean: clean oclean
 
+.PHONY: clean
 clean:
 	$(RM) ./*.swp ./*.~ $(NAME)
+
+.PHONY: oclean
 oclean:
 	$(RM) $(OBJ)
 
-
+.PHONY: re
 re: oclean all
