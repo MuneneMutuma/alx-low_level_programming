@@ -50,5 +50,9 @@ void print_array(int *array, int start, int end)
 	int i;
 
 	for (i = start; i < end + 1; i++)
-		printf("%d ", array[i]);
+	{
+		printf("%d", array[i]);
+		if (i != end)
+			printf(", ");
+	}
 }
