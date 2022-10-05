@@ -29,7 +29,7 @@ int jump_search(int *array, size_t size, int value)
 		top = block * (step + 1);
 		lower = block * step;
 		printf("Value checked array[%d] = [%d]\n", lower, array[lower]);
-		if (array[lower] <= value && value <= array[top])
+		if (value <= array[top])
 		{
 			index = _linear_search(array, lower, top, value);
 			return (index);
