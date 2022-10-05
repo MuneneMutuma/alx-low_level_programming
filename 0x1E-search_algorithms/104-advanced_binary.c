@@ -28,9 +28,11 @@ int advanced_binary(int *array, size_t size, int value)
 		if (value == array[index])
 		{
 			if (value == array[index - 1])
-				last = index - 1;
-			else
-				return (index);
+			{
+				size = (size_t)(index - first);
+				index = advanced_binary(array, size, value);
+			}
+			return (index);
 		}
 		else if (value < array[index])
 			last = index - 1;
